@@ -2,8 +2,8 @@ namespace Day2;
 
 public class Round
 {
-    private int _initialScorePlayer1;
-    private int _initialScorePlayer2;
+    private readonly int _initialScorePlayer1;
+    private readonly int _initialScorePlayer2;
 
     public Round(char player1Char, char player2Char)
     {
