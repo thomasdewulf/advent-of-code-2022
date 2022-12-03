@@ -11,19 +11,14 @@ Select(x => new Rucksack(x)
 Console.WriteLine(prios);
 
 // PART 2
-var chunked = input.Chunk(3);
+var result = input.Chunk(3) //Group rucksacks per 3 elves
+    .Select(rucksacks => rucksacks
+    .Aggregate<IEnumerable<char>>((previousList, nextList) => 
+        previousList.
+            Intersect(nextList)) //Intersect the 3 rucksack values to get the common value
+    .Single()) //There should only be one common value
+    .Select(x => x.GetPriority()) // Get the prio of that value
+    .Sum(); // Add upp all the prios to get final prio
 
-var result = new List<char>();
-foreach (var rucksacks in chunked)
-{
-    var first = rucksacks[0];
-    var second = rucksacks[1];
-    var third = rucksacks[2];
-
-    var common = first.Intersect(second).Intersect(third).Single();
-
-    result.Add(common);
-}
-
-Console.WriteLine(result.Select(x => x.GetPriority()).Sum());
+Console.WriteLine(result);
 
