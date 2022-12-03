@@ -5,7 +5,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>AdventOfCode2022.Day1</RootNamespace>
+        <RootNamespace>AdventOfCode2021</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
