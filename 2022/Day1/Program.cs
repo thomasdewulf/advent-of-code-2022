@@ -9,6 +9,5 @@ var max = calories
     .Take(3)
     .Sum();
 
-
 Console.WriteLine("Elf MAX");
 Console.WriteLine(max);
